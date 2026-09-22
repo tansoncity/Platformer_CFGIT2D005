@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Paralax
   _targetCamera: {fileID: 1814176310}
   _horizontalScale: 0.6
-  _verticalScale: 1
+  _verticalScale: 0.6
   _horizontalLooped: 1
   _width: 19.2
   _xLimit: 17
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Paralax
   _targetCamera: {fileID: 1814176310}
   _horizontalScale: 0.6
-  _verticalScale: 1
+  _verticalScale: 0.6
   _horizontalLooped: 1
   _width: 19.2
   _xLimit: 17

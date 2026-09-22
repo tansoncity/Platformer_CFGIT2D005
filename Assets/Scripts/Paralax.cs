@@ -1,7 +1,4 @@
-using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Splines;
 
 public class Paralax : MonoBehaviour
 {
@@ -23,16 +20,14 @@ public class Paralax : MonoBehaviour
         _startPosition = transform.position;
     }
 
-    private void LateUpdate()
-    {
-        UpdateDistance();
-        //UpdateHeight();
-    }
+    private void LateUpdate() => UpdateDistance();
 
     private void UpdateDistance()
     {
         var cameraDistance = _targetCamera.position - _cameraStartPosition;
-        var newPosition = _startPosition + cameraDistance * _horizontalScale;
+        var newPosition = _startPosition;
+        newPosition.x += cameraDistance.x * _horizontalScale;
+        newPosition.y += cameraDistance.y * _verticalScale;
 
         if (_horizontalLooped)
         {
@@ -54,10 +49,4 @@ public class Paralax : MonoBehaviour
         }
         newPosition.x = _targetCamera.position.x + xOffset;
     }
-
-    //private void UpdateHeight()
-    //{
-    //    var cameraHeight = _targetCamera.position - _cameraStartPosition;
-    //    transform.position = _startPosition + cameraHeight * _heightScale;
-    //}
 }
