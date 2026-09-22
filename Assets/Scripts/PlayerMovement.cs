@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rigid;
     [SerializeField] private GroundChecker _groundChecker;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private InputAction _moveAction;
     private InputAction _jumpAction;
@@ -46,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (direction.x < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            _spriteRenderer.flipX = true;
         }
         else if (direction.x > 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            _spriteRenderer.flipX = false;
         }
     }
 
